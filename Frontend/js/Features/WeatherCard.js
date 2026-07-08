@@ -1,25 +1,43 @@
-const weatherCard = document.getElementById("weather-card");
+import { getWeather } from "../api/weatherApi/weatherApi.js";
 
-weatherCard.innerHTML = `
-    <div class="weather-top">
-        <span class="location">Skopje</span>
-        <span class="weather-icon">☀️</span>
-    </div>
+async function renderWeather() {
+  const weatherCard = document.getElementById("weather-card");
 
-    <div class="weather-current">
-        <span class="temperature">24°</span>
-        <span class="condition">Sunny</span>
-    </div>
+  const data = await getWeather();
 
-    <div class="weather-bottom">
-        <div class="detail-row">
-            <span>💧 52%</span>
-            <span>🌬️ 8 km/h</span>
+  weatherCard.innerHTML = `
+    <div class="weather-animation"></div>
+
+    <div class="weather-overlay">
+
+        <div class="weather-location">
+            ${data.location.name}
         </div>
 
-        <div class="detail-row">
-            <span>H: 27°</span>
-            <span>L: 18°</span>
+        <div class="weather-content">
+
+            <div class="weather-info">
+
+                <div class="temperature">
+                    ${Math.round(data.current.temp_c)}°
+                </div>
+
+                <div class="high-low">
+                    <span>H ${Math.round(data.forecast.forecastday[0].day.maxtemp_c)}°</span>
+                    <span>L ${Math.round(data.forecast.forecastday[0].day.mintemp_c)}°</span>
+                </div>
+
+                <div class="weather-details">
+                    <span>💧 ${data.current.humidity}%</span>
+                    <span>🌬️ ${Math.round(data.current.wind_kph)} km/h</span>
+                </div>
+
+            </div>
+
         </div>
+
     </div>
 `;
+}
+
+renderWeather();
