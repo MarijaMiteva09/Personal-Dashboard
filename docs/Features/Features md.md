@@ -1,7 +1,7 @@
 
 ## Planned Features  
   
-- [[Sidebar]]  
+- [[Weather Card]]  
 - [[Clock]]  
 - [[Daily Tasks]]  
 - [[Notes]]  

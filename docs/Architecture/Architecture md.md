@@ -26,7 +26,7 @@ personal-dashboard/
 │ ├── state/  
 │ │ └── state.js # Global application state  
 │ │  
-│ ├── modules/  
+│ ├── features/  
 │ │ ├── weather.js  
 │ │ ├── news.js  
 │ │ ├── greeting.js  

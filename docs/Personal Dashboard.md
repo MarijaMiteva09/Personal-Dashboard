@@ -21,7 +21,7 @@ Instead of creating many small projects, this dashboard brings together differen
 
 - [[Features md]]
 - [[APIs]]
-- [[Architecture]]
+- [[Architecture md]]
 - [[Overview]]
 - [[Styling]]
 
