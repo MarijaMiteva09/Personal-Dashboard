@@ -1,12 +1,27 @@
 import { getWeather } from "../api/weatherApi/weatherApi.js";
+import { getWeatherAnimation } from "../Utils/weatherAnimations.js";
 
 async function renderWeather() {
   const weatherCard = document.getElementById("weather-card");
 
-  const data = await getWeather();
+  try {
+    const data = await getWeather();
 
-  weatherCard.innerHTML = `
-    <div class="weather-animation"></div>
+    const animation = getWeatherAnimation(
+      data.current.condition.code,
+      data.current.is_day,
+    );
+
+    weatherCard.innerHTML = `
+    <div class="weather-animation">
+        <dotlottie-player
+            src="./js/Assets/weatheranimations/${animation}"
+            autoplay
+            loop
+            background="transparent"
+            style="width: 100%; height: 100%;">
+        </dotlottie-player>
+    </div>
 
     <div class="weather-overlay">
 
@@ -37,7 +52,14 @@ async function renderWeather() {
         </div>
 
     </div>
-`;
+    `;
+  } catch (error) {
+    console.error(error);
+
+    weatherCard.innerHTML = `
+      <p>Unable to load weather.</p>
+    `;
+  }
 }
 
 renderWeather();
