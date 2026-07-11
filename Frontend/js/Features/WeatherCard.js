@@ -1,65 +1,85 @@
 import { getWeather } from "../api/weatherApi/weatherApi.js";
-import { getWeatherAnimation } from "../Utils/weatherAnimations.js";
+import { getWeatherBackground } from "../Utils/weatherBackground.js";
+
+let clockInterval;
 
 async function renderWeather() {
   const weatherCard = document.getElementById("weather-card");
 
-  try {
-    const data = await getWeather();
+  const data = await getWeather();
 
-    const animation = getWeatherAnimation(
-      data.current.condition.code,
-      data.current.is_day,
-    );
+  const background = getWeatherBackground(
+    data.current.condition.code,
+    data.current.is_day,
+  );
 
-    weatherCard.innerHTML = `
-    <div class="weather-animation">
-        <dotlottie-player
-            src="./js/Assets/weatheranimations/${animation}"
-            autoplay
-            loop
-            background="transparent"
-            style="width: 100%; height: 100%;">
-        </dotlottie-player>
-    </div>
+  weatherCard.innerHTML = `
+    <div
+      class="weather-background"
+      style="background-image: url('${background}')"
+    >
+      <div class="weather-overlay">
 
-    <div class="weather-overlay">
+        <div class="weather-top">
 
-        <div class="weather-location">
-            ${data.location.name}
-        </div>
+          <div class="weather-info">
+            <p class="condition">
+              ${data.current.condition.text}
+            </p>
 
-        <div class="weather-content">
+            <h1 class="temperature">
+              ${Math.round(data.current.temp_c)}°
+            </h1>
+          </div>
 
-            <div class="weather-info">
 
-                <div class="temperature">
-                    ${Math.round(data.current.temp_c)}°
-                </div>
+          <div class="weather-time">
 
-                <div class="high-low">
-                    <span>H ${Math.round(data.forecast.forecastday[0].day.maxtemp_c)}°</span>
-                    <span>L ${Math.round(data.forecast.forecastday[0].day.mintemp_c)}°</span>
-                </div>
+            <h2 id="clock"></h2>
 
-                <div class="weather-details">
-                    <span>💧 ${data.current.humidity}%</span>
-                    <span>🌬️ ${Math.round(data.current.wind_kph)} km/h</span>
-                </div>
+            <p id="date"></p>
 
-            </div>
+            <p class="location">
+              ${data.location.name}
+            </p>
+
+          </div>
+
 
         </div>
 
+      </div>
     </div>
-    `;
-  } catch (error) {
-    console.error(error);
+  `;
 
-    weatherCard.innerHTML = `
-      <p>Unable to load weather.</p>
-    `;
+  updateClock();
+
+  if (clockInterval) {
+    clearInterval(clockInterval);
   }
+
+  clockInterval = setInterval(updateClock, 1000);
+}
+
+function updateClock() {
+  const clock = document.getElementById("clock");
+  const date = document.getElementById("date");
+
+  if (!clock || !date) return;
+
+  const now = new Date();
+
+  clock.textContent = now.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  date.textContent = now.toLocaleDateString([], {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
 }
 
 renderWeather();
