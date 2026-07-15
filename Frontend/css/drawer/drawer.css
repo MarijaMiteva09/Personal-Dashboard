@@ -1,0 +1,48 @@
+#left-sidebar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 360px;
+  height: 100vh;
+
+  transform: translateX(calc(-100% + 55px));
+
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+
+  box-shadow: 10px 0 40px rgba(0, 0, 0, 0.15);
+
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(18px);
+
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#left-sidebar.open {
+  transform: translateX(0);
+}
+
+#drawer-toggle {
+  position: absolute;
+
+  top: 30px;
+  right: -55px;
+
+  width: 55px;
+  height: 55px;
+
+  border: none;
+  border-radius: 0 16px 16px 0;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+#left-sidebar.open #drawer-toggle {
+  transform: rotate(360deg);
+}

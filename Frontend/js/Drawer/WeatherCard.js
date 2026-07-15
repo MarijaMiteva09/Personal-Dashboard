@@ -3,7 +3,7 @@ import { getWeatherBackground } from "../Utils/weatherBackground.js";
 
 let clockInterval;
 
-async function renderWeather() {
+export async function renderWeather() {
   const weatherCard = document.getElementById("weather-card");
 
   const data = await getWeather();
@@ -81,5 +81,3 @@ function updateClock() {
     year: "numeric",
   });
 }
-
-renderWeather();

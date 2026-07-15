@@ -1,15 +1,27 @@
-* {
+@import "./drawer/drawer.css";
+@import "./drawer/weather.css";
+@import "./drawer/newscard.css";
+
+body {
   margin: 0;
-  padding: 0;
+  background: #f8fafc;
+  font-family: sans-serif;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+
+  padding: 24px;
+
   box-sizing: border-box;
 }
 
-body {
-  min-height: 100vh;
-  background-color: #111827;
-  color: #ffffff;
-}
-
-button {
-  cursor: pointer;
+#left-sidebar,
+#right-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
