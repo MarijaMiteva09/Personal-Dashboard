@@ -1,14 +1,14 @@
 export function initializeDrawer() {
   const drawer = document.getElementById("left-sidebar");
   const button = document.getElementById("drawer-toggle");
+  const content = document.getElementById("content");
 
   button.addEventListener("click", () => {
-    drawer.classList.toggle("open");
+    const isOpen = drawer.classList.toggle("open");
 
-    if (drawer.classList.contains("open")) {
-      button.textContent = "←";
-    } else {
-      button.textContent = "☰";
-    }
+    content.classList.toggle("drawer-open", isOpen);
+    button.classList.toggle("drawer-open", isOpen);
+
+    button.textContent = isOpen ? "←" : "☰";
   });
 }

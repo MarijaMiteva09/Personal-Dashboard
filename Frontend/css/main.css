@@ -1,27 +1,59 @@
 @import "./drawer/drawer.css";
 @import "./drawer/weather.css";
 @import "./drawer/newscard.css";
+@import "./main/searchbar.css";
+
+:root {
+  --drawer-width: 360px;
+  --drawer-handle: 55px;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
+  overflow-x: hidden;
+
   background: #f8fafc;
   font-family: sans-serif;
 }
 
-.dashboard {
-  display: flex;
-  flex-direction: column;
+#content {
+  display: grid;
 
-  gap: 20px;
+  grid-template-columns: 1fr 320px;
 
-  padding: 24px;
+  gap: 32px;
 
-  box-sizing: border-box;
+  min-height: 100vh;
+
+  margin-left: 90px;
+
+  padding: 32px;
+
+  transition: margin-left 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-#left-sidebar,
+#content.drawer-open {
+  margin-left: 420px;
+}
+
+#main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 #right-sidebar {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }

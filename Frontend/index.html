@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,39 +9,41 @@
   </head>
 
   <body>
-      <aside id="left-sidebar">
-
     <button id="drawer-toggle">☰</button>
 
-    <div class="dashboard">
-
+    <aside id="left-sidebar">
+      <div class="dashboard">
         <section id="weather-card"></section>
 
         <div class="news-section">
-
-            <h2 class="news-title">
-                Latest News
-            </h2>
-
-            <div id="news-list"></div>
-
+          <h2 class="news-title">Latest News</h2>
+          <div id="news-list"></div>
         </div>
+      </div>
+    </aside>
 
-    </div>
-
-</aside>
-
+    <div id="content">
       <main id="main-content">
-        <section id="greeting"></section>
+        <section id="hero">
+          <div class="search-container">
+            <span class="search-icon">⌕</span>
+
+            <input
+              type="text"
+              id="dashboard-search"
+              placeholder="Search notes, events, news..."
+            />
+          </div>
+
+          <div id="greeting"></div>
+        </section>
 
         <section id="charts"></section>
-
         <section id="spotify"></section>
       </main>
 
       <aside id="right-sidebar">
         <section id="calendar"></section>
-
         <section id="notes"></section>
       </aside>
     </div>
