@@ -4,7 +4,7 @@
 ## 📁 Project Structure  
   
 ```text  
-personal-dashboard/  
+Frontend/  
 │  
 ├── index.html  
 │  
@@ -23,9 +23,8 @@ personal-dashboard/
 │ │  
 │ ├── app.js # Application entry point  
 │ │  
-│ ├── state/  
-│ │ └── state.js # Global application state  
-│ │  
+│ ├ 
+│ │
 │ ├── features/  
 │ │ ├── weather.js  
 │ │ ├── news.js  
@@ -43,8 +42,7 @@ personal-dashboard/
 │ │ ├── newsApi.js  
 │ │ └── spotifyApi.js  
 │ │  
-│ ├── services/  
-│ │ └── storage.js  
+│ ├ 
 │ │  
 │ └── utils/  
 │ ├── helpers.js  
@@ -73,26 +71,6 @@ Contains all JavaScript logic for the dashboard.
 
 Every folder inside `js` has a single responsibility, following the principle of separation of concerns.
 
----
-
-## 📁 js/state/
-
-Stores the application's global state.
-
-This folder holds the data that multiple modules need to access, such as the current user, theme, weather data, news, events, and notes. Keeping the state in one place makes it easier to update the UI consistently.
-
----
-
-## 📁 js/modules/
-
-Contains the business logic for each dashboard feature.
-
-Each file represents one widget or feature (Weather, Calendar, Notes, Theme, Spotify, etc.) and is responsible for handling its own functionality and updating its own UI.
-
-Examples:
-- `weather.js` → Displays weather information.
-- `calendar.js` → Manages the calendar.
-- `notes.js` → Handles creating, editing, and deleting notes.
 
 ---
 
