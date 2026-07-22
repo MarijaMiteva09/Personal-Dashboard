@@ -145,5 +145,5 @@ The Weather Card uses the following data:
 
 
 ## Related Documentation 
-- [[Weather API]] 
+- [[Weather and News API]] 
 - [[Drawer Section Style]]

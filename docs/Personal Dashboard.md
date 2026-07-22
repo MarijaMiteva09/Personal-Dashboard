@@ -19,8 +19,8 @@ Instead of creating many small projects, this dashboard brings together differen
 
 ## Main Sections
 
-- [[Dashboard Sections md]]
-- [[API md]]
-- [[Architecture md]]
-- [[Style md]]
+- [[Dashboard Sections]]
+- [[API]]
+- [[Architecture]]
+- [[Style]]
 
