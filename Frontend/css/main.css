@@ -2,6 +2,7 @@
 @import "./drawer/weather.css";
 @import "./drawer/newscard.css";
 @import "./main/searchbar.css";
+@import "./rightsidebar/calendar.css";
 
 :root {
   --drawer-width: 360px;
@@ -23,9 +24,9 @@ body {
 #content {
   display: grid;
 
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 380px;
 
-  gap: 32px;
+  gap: 40px;
 
   min-height: 100vh;
 
@@ -49,7 +50,9 @@ body {
 #right-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 28px;
+
+  width: 380px;
 }
 
 #hero {
