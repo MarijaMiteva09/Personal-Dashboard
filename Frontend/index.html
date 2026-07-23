@@ -42,113 +42,87 @@
         <section id="spotify"></section>
       </main>
 
-      <aside id="right-sidebar">
-  <!-- Calendar -->
-  <section id="calendar">
+    <aside id="right-sidebar">
+    <section id="calendar">
 
-    <div class="calendar-card">
+        <div class="calendar-header">
 
-      <div class="calendar-header">
-        <button class="calendar-btn">&#10094;</button>
+            <button 
+  class="calendar-btn" 
+  id="prev-month">
+  &#10094;
+</button>
 
-        <h2 class="month-year">July 2026</h2>
+<h2 class="month-year" id="month-year"></h2>
 
-        <button class="calendar-btn">&#10095;</button>
-      </div>
+<button 
+  class="calendar-btn" 
+  id="next-month">
+  &#10095;
+</button>
 
-      <div class="calendar-weekdays">
-        <span>Mo</span>
-        <span>Tu</span>
-        <span>We</span>
-        <span>Th</span>
-        <span>Fr</span>
-        <span>Sa</span>
-        <span>Su</span>
-      </div>
+        </div>
 
-      <div class="calendar-days">
+        <div class="calendar-weekdays">
+            <span>Mo</span>
+            <span>Tu</span>
+            <span>We</span>
+            <span>Th</span>
+            <span>Fr</span>
+            <span>Sa</span>
+            <span>Su</span>
+        </div>
 
-        <span class="empty"></span>
-        <span class="empty"></span>
+       <div class="calendar-days" id="calendar-days"></div>
+    </section>
 
-        <div class="day">1</div>
-        <div class="day">2</div>
-        <div class="day">3</div>
-        <div class="day">4</div>
-        <div class="day">5</div>
+    <!-- Timeline -->
 
-        <div class="day">6</div>
-        <div class="day">7</div>
-        <div class="day">8</div>
-        <div class="day">9</div>
-        <div class="day">10</div>
-        <div class="day">11</div>
-        <div class="day">12</div>
+    <section id="timeline">
 
-        <div class="day">13</div>
-        <div class="day">14</div>
-        <div class="day today">15</div>
-        <div class="day">16</div>
-        <div class="day">17</div>
-        <div class="day">18</div>
-        <div class="day">19</div>
+        <div class="timeline-header">
 
-        <div class="day">20</div>
-        <div class="day">21</div>
-        <div class="day">22</div>
-        <div class="day">23</div>
-        <div class="day">24</div>
-        <div class="day">25</div>
-        <div class="day">26</div>
+            <h2 class="timeline-title">Today</h2>
 
-        <div class="day">27</div>
-        <div class="day">28</div>
-        <div class="day">29</div>
-        <div class="day">30</div>
-        <div class="day">31</div>
+            <button class="new-event-btn">
+                + New Event
+            </button>
 
-      </div>
+        </div>
+        
+        <div class="timeline-list">
 
-      <div class="calendar-actions">
-    <button id="add-event-btn">
-        + Add Event
-    </button>
-</div>
+            <div class="timeline-card">
 
-    </div>
+                <span class="time">09:00</span>
 
-  </section>
+                <div class="timeline-info">
 
-  <!-- Timeline -->
-  <section id="timeline">
+                    <h3>Dashboard Development</h3>
 
-    <h2 class="timeline-title">
-      Today's Timeline
-    </h2>
+                    <p>Finish the calendar redesign.</p>
 
-    <div class="timeline-card">
+                </div>
 
-      <span class="time">09:00</span>
+            </div>
 
-      <div class="timeline-info">
-        <h3>Dashboard Development</h3>
-        <p>Finish the calendar feature.</p>
-      </div>
+            <div class="timeline-card">
 
-    </div>
+                <span class="time">18:00</span>
 
-    <div class="timeline-card">
+                <div class="timeline-info">
 
-      <span class="time">18:00</span>
+                    <h3>Basketball Practice</h3>
 
-      <div class="timeline-info">
-        <h3>Basketball Practice</h3>
-        <p>Team training.</p>
-      </div>
+                    <p>Team training.</p>
 
-    </div>
+                </div>
 
-  </section>
+            </div>
+
+        </div>
+
+    </section>
 
 </aside>
 
